@@ -1,0 +1,235 @@
+-- Adminer 4.2.3 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+CREATE DATABASE `dev` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `dev`;
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `admin` (`id`, `name`, `email`, `password`, `created`, `modified`) VALUES
+(1,	'dev',	'dev@gmail.com',	'e77989ed21758e78331b20e477fc5582',	'2015-06-28 08:57:39',	'2015-06-28 08:57:43');
+
+DROP TABLE IF EXISTS `c_admins`;
+CREATE TABLE `c_admins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `c_admins` (`id`, `name`, `email`, `password`, `created`, `modified`) VALUES
+(1,	'dev',	'dev@gmail.com',	'dev',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00');
+
+DROP TABLE IF EXISTS `c_contacts`;
+CREATE TABLE `c_contacts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `fax` varchar(255) NOT NULL,
+  `website` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `c_contacts` (`id`, `name`, `email`, `fax`, `website`, `address`, `contact`, `created`, `modified`) VALUES
+(1,	'Dev',	'dev@gmail.com',	'7276070179',	'www.dev.com',	'nagpur',	'7276070179',	'2014-11-12 00:00:00',	'2014-11-12 00:00:00');
+
+DROP TABLE IF EXISTS `c_enquiries`;
+CREATE TABLE `c_enquiries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `comments` text NOT NULL,
+  `messages` text NOT NULL,
+  `contact` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `c_enquiries` (`id`, `name`, `email`, `subject`, `comments`, `messages`, `contact`, `created`, `modified`) VALUES
+(2,	'ram',	'r@gmail.com',	'visit',	'nice on',	'good',	'8542543',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00');
+
+DROP TABLE IF EXISTS `c_news`;
+CREATE TABLE `c_news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `details_news` text NOT NULL,
+  `from_date` date NOT NULL,
+  `to_date` date NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `c_news` (`id`, `title`, `details_news`, `from_date`, `to_date`, `created`, `modified`) VALUES
+(2,	'First Site',	'This is my First site.',	'0000-00-00',	'0000-00-00',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(3,	'this is my fake site',	'fake site that`s make for practice.',	'0000-00-00',	'0000-00-00',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(4,	'Dev',	'Itna pyar kisi pyar pahli bar aaya ......',	'0000-00-00',	'0000-00-00',	'0000-00-00 00:00:00',	'2014-11-09 11:11:31'),
+(5,	'new star',	'nwe star the bakery,\r\npls store the product at cool place.',	'0000-00-00',	'0000-00-00',	'2014-11-11 06:11:34',	'0000-00-00 00:00:00');
+
+DROP TABLE IF EXISTS `c_pages`;
+CREATE TABLE `c_pages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `c_pages` (`id`, `title`, `description`, `created`, `modified`) VALUES
+(3,	'About us',	'about',	'2014-11-10 04:11:47',	'0000-00-00 00:00:00'),
+(4,	'hello',	'hello',	'2014-11-12 03:11:56',	'0000-00-00 00:00:00');
+
+DROP TABLE IF EXISTS `c_projects`;
+CREATE TABLE `c_projects` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `project_status` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `c_projects` (`id`, `title`, `description`, `photo`, `project_status`, `created`, `modified`) VALUES
+(2,	'Guest Notice Titles',	',n,',	'',	'C',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(3,	'pune',	'pune',	'',	'C',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(4,	'ngp',	'ngo',	'',	'C',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(5,	'eco',	'eco',	'demo2.jpg',	'O',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(6,	'Kitchan',	'Design Of the Kitchan',	'kitchen-01.jpg',	'O',	'2014-11-11 05:11:17',	'0000-00-00 00:00:00');
+
+DROP TABLE IF EXISTS `c_testimonials`;
+CREATE TABLE `c_testimonials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `c_testimonials` (`id`, `client_name`, `description`, `status`, `created`, `modified`) VALUES
+(3,	'aim',	'your aims should be high.',	'A',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(4,	'sitaram',	' sitaram b sonsathi',	'A',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(5,	'kishan',	'love is in the air\r\n',	'',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00');
+
+DROP TABLE IF EXISTS `guests`;
+CREATE TABLE `guests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `users_id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `hobbies` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `avatar` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `guests` (`id`, `users_id`, `name`, `email`, `address`, `hobbies`, `phone`, `gender`, `avatar`, `created`, `modified`) VALUES
+(6,	'1',	'sarang',	'sarang@gmail.com',	'nagpur',	'Reading',	'7878787878',	'M',	'143620311320150318_203542.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(7,	'1',	'mohit',	'mohit@gmail.com',	'nagpur',	'Reading',	'7877877888',	'M',	'1436203243IMG-20150130-WA0025.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(8,	'1',	'mangesh',	'mangesh@gmail.com',	'nagpur',	'Reading, Listening',	'7877877888',	'M',	'1436203276919890308828.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(9,	'1',	'sunny',	'sunny@gmail.com',	'nagpur',	'Reading',	'7878787878',	'M',	'145784429220150212_165550.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(10,	'1',	'Akhilesh',	'akhilesh@gmail.com',	'nagpur',	'Reading, Listening',	'7878787878',	'M',	'143620320420150226_180325.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(23,	'1',	'Aashish hedaoo',	'aashish@gmail.com',	'maskasath, Itwari, nagpur',	'Reading',	'1234566789',	'M',	'1436202470IMG-20140815-WA0021.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(24,	'1',	'Piyush mehtre',	'piyush@gmail.com',	'ram peth, nagpur',	'Reading',	'1234566789',	'M',	'1436202539IMG-20140815-WA0008.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(25,	'1',	'Vikas ',	'vikas@gmail.com',	'Tajbagh',	'Reading, Listening',	'1234566789',	'M',	'1436202722IMG-20150604-WA0028.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(26,	'1',	'Nilesh',	'nilesh@gmail.com',	'Balaji Nagar',	'Reading',	'1234566789',	'M',	'143620279120150520_215224.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(27,	'1',	'pradip',	'pradip@gmail.com',	'Saoner',	'Reading',	'1234566789',	'M',	'143620289820150521_000826.jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(28,	'5',	'test',	'test@gmail.com',	'test',	'Reading',	'7276070179',	'M',	'1449997238(650).jpg',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00');
+
+DROP TABLE IF EXISTS `guys`;
+CREATE TABLE `guys` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(255) NOT NULL,
+  `lname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(11) NOT NULL,
+  `gender` varchar(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `captcha` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `notices`;
+CREATE TABLE `notices` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `notice` text NOT NULL,
+  `modified` datetime NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `notices` (`id`, `title`, `notice`, `modified`, `created`) VALUES
+(1,	'Notice Board',	'Jiyu dil se ..............\r\n\r\nJiyu haq se............\r\n\r\nbreak the roles.......\r\n\r\nand you will get success.',	'2015-07-01 22:10:23',	'2015-07-01 22:10:28');
+
+DROP TABLE IF EXISTS `students`;
+CREATE TABLE `students` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `students` (`id`, `name`, `email`, `password`, `created`, `modified`) VALUES
+(1,	'dev',	'dev@gmail.com',	'123',	'2014-09-28 00:00:00',	'2014-09-28 00:00:00'),
+(2,	'dev1',	'abc@gmail.com',	'abc',	'2014-09-01 22:00:43',	'2014-09-10 22:05:37'),
+(3,	'a',	'a@gmail.com',	'a',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(4,	'dev',	'dev@gmail.com',	'dev',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(5,	'xyz',	'xyz@gmail.com',	'xyz',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00');
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `users` (`id`, `name`, `password`, `email`, `created`, `modified`) VALUES
+(1,	'devd',	'dev',	'dev@gmail.com',	'2014-10-26 00:00:00',	'2014-10-26 00:00:00'),
+(2,	'd',	'd',	'd@gmail.com',	'2014-10-26 00:00:00',	'2014-10-26 00:00:00'),
+(3,	'xyz',	'xyz',	'xyz@gmail.com',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(4,	'dev sonsathi',	'dev@gmail.com',	'dev@gmail.com',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00'),
+(5,	'Devd',	'dev',	'dev@ymail.com',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00');
+
+-- 2016-03-13 04:46:41
